@@ -5,17 +5,70 @@
                 <img src="/images/Gravesend.png" alt="Hixa Heating Gravesend Logo">
             </a>
         </div>
-        <nav class="main-nav">
+        
+        <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <nav class="main-nav" id="main-navigation">
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/about/">About</a></li>
-                <li><a href="/boiler-service-repairs/">Services</a></li>
+                <li class="has-submenu">
+                    <a href="/boiler-service-repairs/" aria-expanded="false">Services</a>
+                    <ul class="submenu">
+                        <li><a href="/boiler-service-repairs/">Boiler Service & Repairs</a></li>
+                        <li><a href="/combi-boiler-installation/">Combi Boiler Installation</a></li>
+                        <li><a href="/gas-safe-registered/">Gas Safe Registered</a></li>
+                        <li><a href="/vaillant-boiler-installers/">Vaillant Boiler Installers</a></li>
+                        <li><a href="/worcester-bosch-boiler-installers/">Worcester Bosch Installers</a></li>
+                    </ul>
+                </li>
                 <li><a href="/prices/">Prices</a></li>
+                <li class="has-submenu">
+                    <a href="/locations/gravesend/" aria-expanded="false">Locations</a>
+                    <ul class="submenu">
+                        <li><a href="/locations/gravesend/">Gravesend</a></li>
+                        <li><a href="/locations/dartford/">Dartford</a></li>
+                        <li><a href="/locations/northfleet/">Northfleet</a></li>
+                        <li><a href="/locations/greenhithe/">Greenhithe</a></li>
+                        <li><a href="/locations/milton/">Milton</a></li>
+                        <li><a href="/locations/denton/">Denton</a></li>
+                        <li><a href="/locations/chalk/">Chalk</a></li>
+                        <li><a href="/locations/church-street/">Church Street</a></li>
+                        <li><a href="/locations/cliffe/">Cliffe</a></li>
+                        <li><a href="/locations/cliffe-woods/">Cliffe Woods</a></li>
+                        <li><a href="/locations/cobham/">Cobham</a></li>
+                        <li><a href="/locations/crossways/">Crossways</a></li>
+                        <li><a href="/locations/cuxton/">Cuxton</a></li>
+                        <li><a href="/locations/darenth/">Darenth</a></li>
+                        <li><a href="/locations/hartley/">Hartley</a></li>
+                        <li><a href="/locations/higham/">Higham</a></li>
+                        <li><a href="/locations/istead-rise/">Istead Rise</a></li>
+                        <li><a href="/locations/meopham/">Meopham</a></li>
+                        <li><a href="/locations/new-ash-green/">New Ash Green</a></li>
+                        <li><a href="/locations/new-town/">New Town</a></li>
+                        <li><a href="/locations/shorne/">Shorne</a></li>
+                        <li><a href="/locations/singlewell/">Singlewell</a></li>
+                        <li><a href="/locations/south-darenth/">South Darenth</a></li>
+                        <li><a href="/locations/st-margarets/">St Margarets</a></li>
+                        <li><a href="/locations/stone/">Stone</a></li>
+                        <li><a href="/locations/swanscombe/">Swanscombe</a></li>
+                        <li><a href="/locations/westwood/">Westwood</a></li>
+                        <li><a href="/locations/whitehill/">Whitehill</a></li>
+                    </ul>
+                </li>
                 <li><a href="/contact/">Contact</a></li>
+                <li><a href="/privacy-policy/">Privacy</a></li>
             </ul>
         </nav>
+        
         <div class="header-cta">
             <a href="tel:01474554887" class="phone-button">Call 01474 554887</a>
         </div>
     </div>
+    
+    <script src="/js/header.js" defer></script>
 </header>
