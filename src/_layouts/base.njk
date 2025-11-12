@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title or "Hixa Heating - New Boiler Installation Gravesend" }}</title>
+    <meta name="description" content="{{ description or 'Gas Safe boiler installers in Gravesend. Free quotes, up to 12 year warranties. Worcester Bosch, Vaillant, Viessmann boilers.' }}">
+    <meta property="og:title" content="{{ title or 'Hixa Heating - New Boiler Installation Gravesend' }}">
+    <meta property="og:description" content="{{ description or 'Gas Safe boiler installers in Gravesend. Free quotes, up to 12 year warranties.' }}">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Hixa Heating",
+      "image": "https://hixaheating.com/images/Gravesend.png",
+      "@id": "https://hixaheating.com",
+      "url": "https://hixaheating.com",
+      "telephone": "01474554887",
+      "priceRange": "££-£££",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "Gravesend",
+        "addressRegion": "Kent",
+        "postalCode": "",
+        "addressCountry": "GB"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 51.4417,
+        "longitude": 0.3701
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
+      "sameAs": [],
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Gravesend"
+        },
+        {
+          "@type": "City",
+          "name": "Dartford"
+        },
+        {
+          "@type": "City",
+          "name": "Northfleet"
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    {% include "header.njk" %}
+    
+    <main>
+        {{ content | safe }}
+    </main>
+    
+    {% include "footer.njk" %}
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "hixaheating",
+  "version": "1.0.0",
+  "description": "Hixa Heating - New Boiler Installation Gravesend",
+  "scripts": {
+    "start": "eleventy --serve --port=5000",
+    "build": "eleventy"
+  },
+  "keywords": ["eleventy", "boiler", "heating"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  },
+  "dependencies": {}
+}
