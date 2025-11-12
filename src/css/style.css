@@ -374,7 +374,7 @@ main {
     color: #444;
 }
 
-.section a {
+.section a:not(.cta-button) {
     color: #d62c1a;
     text-decoration: none;
     font-weight: 600;
@@ -569,6 +569,11 @@ footer {
     .header-container {
         flex-direction: column;
         gap: 1rem;
+    }
+    
+    .header-cta {
+        margin-left: 0;
+        align-self: center;
     }
     
     .main-nav ul {
