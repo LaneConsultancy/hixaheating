@@ -583,6 +583,10 @@ footer {
         gap: 1rem;
     }
     
+    .logo img {
+        height: 90px;
+    }
+    
     .header-cta {
         margin-left: 0;
         align-self: center;
