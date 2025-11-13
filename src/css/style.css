@@ -1,3 +1,12 @@
+:root {
+    --primary-color: #F7955E;
+    --primary-hover: #D27F50;
+    --secondary-color: #2D4E68;
+    --secondary-dark: #243E53;
+    --secondary-mid: #365a79;
+    --light-tint: #FFF0E6;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +22,7 @@ body {
 
 header {
     background: #fff;
-    border-bottom: 3px solid #d62c1a;
+    border-bottom: 3px solid #F7955E;
     padding: 1rem 0;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     position: relative;
@@ -61,12 +70,12 @@ body.menu-open {
     left: 0;
     width: 0;
     height: 2px;
-    background: #d62c1a;
+    background: #F7955E;
     transition: width 0.3s ease;
 }
 
 .main-nav a:hover {
-    color: #d62c1a;
+    color: #2D4E68;
 }
 
 .main-nav a:hover::after {
@@ -74,19 +83,20 @@ body.menu-open {
 }
 
 .phone-button {
-    background: #d62c1a;
-    color: #fff;
+    background: #F7955E;
+    color: #243E53;
     padding: 0.75rem 1.5rem;
     text-decoration: none;
     border-radius: 8px;
     font-weight: bold;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(214, 44, 26, 0.3);
+    box-shadow: 0 2px 8px rgba(247, 149, 94, 0.3);
 }
 
 .phone-button:hover {
-    background: #b5230f;
-    box-shadow: 0 4px 12px rgba(214, 44, 26, 0.4);
+    background: #F7955E;
+    color: #243E53;
+    box-shadow: 0 4px 16px rgba(247, 149, 94, 0.5);
     transform: translateY(-2px);
 }
 
@@ -123,7 +133,7 @@ body.menu-open {
 }
 
 .mobile-menu-toggle:focus {
-    outline: 2px solid #d62c1a;
+    outline: 2px solid #F7955E;
     outline-offset: 4px;
 }
 
@@ -165,7 +175,7 @@ body.menu-open {
 
 .submenu a:hover {
     background: #f8f9fa;
-    color: #d62c1a;
+    color: #243E53;
     padding-left: 2rem;
 }
 
@@ -174,7 +184,7 @@ body.menu-open {
 }
 
 .main-nav a:focus {
-    outline: 2px solid #d62c1a;
+    outline: 2px solid #F7955E;
     outline-offset: 4px;
 }
 
@@ -263,6 +273,7 @@ body.menu-open {
     
     .submenu a:hover {
         background: #fff;
+        color: #243E53;
         padding-left: 3.5rem;
     }
     
@@ -277,7 +288,7 @@ main {
 
 .hero {
     position: relative;
-    background: linear-gradient(135deg, #d62c1a 0%, #b5230f 100%);
+    background: linear-gradient(135deg, #2D4E68 0%, #243E53 100%);
     color: #fff;
     padding: 6rem 2rem;
     text-align: center;
@@ -293,7 +304,7 @@ main {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(214, 44, 26, 0.9) 0%, rgba(181, 35, 15, 0.85) 100%);
+    background: linear-gradient(135deg, rgba(45, 78, 104, 0.9) 0%, rgba(36, 62, 83, 0.85) 100%);
     z-index: 1;
 }
 
@@ -337,7 +348,7 @@ main {
 }
 
 .section h2 {
-    color: #d62c1a;
+    color: #2D4E68;
     margin-bottom: 1.5rem;
     font-size: 2.2rem;
     font-weight: 700;
@@ -347,7 +358,7 @@ main {
 }
 
 .section h3 {
-    color: #2c3e50;
+    color: #2D4E68;
     margin-top: 2rem;
     margin-bottom: 1rem;
     font-size: 1.6rem;
@@ -365,7 +376,7 @@ main {
 }
 
 .section li::marker {
-    color: #d62c1a;
+    color: #F7955E;
 }
 
 .section p {
@@ -375,7 +386,7 @@ main {
 }
 
 .section a:not(.cta-button) {
-    color: #d62c1a;
+    color: #2D4E68;
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
@@ -383,8 +394,8 @@ main {
 }
 
 .section a:hover {
-    color: #b5230f;
-    border-bottom-color: #b5230f;
+    color: #243E53;
+    border-bottom-color: #243E53;
 }
 
 .section img {
@@ -397,8 +408,8 @@ main {
 
 .cta-button {
     display: inline-block;
-    background: #d62c1a;
-    color: #fff;
+    background: #F7955E;
+    color: #243E53;
     padding: 1.2rem 2.5rem;
     text-decoration: none;
     border-radius: 8px;
@@ -406,29 +417,30 @@ main {
     font-size: 1.1rem;
     margin: 1.5rem 0;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(214, 44, 26, 0.3);
+    box-shadow: 0 4px 12px rgba(247, 149, 94, 0.3);
     border: none;
     cursor: pointer;
 }
 
 .cta-button:hover {
-    background: #b5230f;
-    box-shadow: 0 6px 20px rgba(214, 44, 26, 0.4);
+    background: #F7955E;
+    color: #243E53;
+    box-shadow: 0 6px 24px rgba(247, 149, 94, 0.5);
     transform: translateY(-3px);
 }
 
 .hero .cta-button {
     background: #fff;
-    color: #d62c1a;
-    border: 2px solid #d62c1a;
+    color: #243E53;
+    border: 2px solid #F7955E;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .hero .cta-button:hover {
     background: #f8f9fa;
-    color: #b5230f;
-    border-color: #b5230f;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    color: #243E53;
+    border-color: #F7955E;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
     transform: translateY(-3px);
 }
 
@@ -445,7 +457,7 @@ main {
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.07);
     transition: all 0.3s ease;
-    border-top: 4px solid #d62c1a;
+    border-top: 4px solid #F7955E;
 }
 
 .card:hover {
@@ -454,7 +466,7 @@ main {
 }
 
 .card h3 {
-    color: #2c3e50;
+    color: #2D4E68;
     margin-bottom: 1rem;
     font-size: 1.5rem;
 }
@@ -476,7 +488,7 @@ main {
     background: #f8f9fa;
     border-radius: 8px;
     transition: all 0.3s ease;
-    border-left: 4px solid #d62c1a;
+    border-left: 4px solid #F7955E;
 }
 
 .feature-item:hover {
@@ -486,13 +498,13 @@ main {
 }
 
 .feature-item strong {
-    color: #2c3e50;
+    color: #2D4E68;
     font-size: 1.1rem;
 }
 
 .highlight-box {
-    background: linear-gradient(135deg, #fff5f3 0%, #ffe8e5 100%);
-    border-left: 5px solid #d62c1a;
+    background: #FFF0E6;
+    border-left: 5px solid #F7955E;
     padding: 2rem;
     margin: 2rem 0;
     border-radius: 8px;
@@ -500,12 +512,12 @@ main {
 }
 
 .highlight-box h3 {
-    color: #d62c1a;
+    color: #243E53;
     margin-top: 0;
 }
 
 footer {
-    background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
+    background: linear-gradient(135deg, #2D4E68 0%, #243E53 100%);
     color: #fff;
     padding: 4rem 2rem 1.5rem;
     margin-top: 4rem;
@@ -521,7 +533,7 @@ footer {
 }
 
 .footer-section h3 {
-    color: #d62c1a;
+    color: #fff;
     margin-bottom: 1.5rem;
     font-size: 1.3rem;
     font-weight: 600;
@@ -543,7 +555,7 @@ footer {
 }
 
 .footer-section a:hover {
-    color: #d62c1a;
+    color: #ecf0f1;
     transform: translateX(5px);
 }
 
@@ -551,7 +563,7 @@ footer {
     text-align: center;
     margin-top: 3rem;
     padding-top: 2rem;
-    border-top: 1px solid #34495e;
+    border-top: 1px solid #365a79;
     color: #bdc3c7;
 }
 
