@@ -18,11 +18,20 @@ This is a complete rebuild of hixaheating.com using the Eleventy (11ty) static s
 └── package.json           # Dependencies
 ```
 
-## Recent Changes (November 12, 2025)
+## Recent Changes
+### November 13, 2025 - Color Scheme Update
+- ✅ Complete color scheme conversion from red (#d62c1a) to peachy orange (#F7955E) and dark blue (#2D4E68/#243E53)
+- ✅ Achieved WCAG AA accessibility compliance across all 39 pages
+- ✅ All text contrast ratios meet or exceed 4.5:1 (normal text) or 3:1 (large text 18pt+)
+- ✅ Fixed mobile navigation bugs (invisible CTA text, off-center header phone button)
+- ✅ Implemented CSS custom properties for maintainable color management
+- ✅ Updated all interactive states (hovers, focus) for accessibility
+
+### November 12, 2025 - Initial Build
 - ✅ Complete Eleventy setup with Nunjucks templating
 - ✅ Downloaded all original images including logo (Gravesend.png)
-- ✅ Created 38 pages total: homepage, 6 service pages, 3 core pages (about, contact, privacy), 28 location pages
-- ✅ Implemented responsive CSS with brand colors (#e74c3c red/orange theme)
+- ✅ Created 39 pages total: homepage, 6 service pages, 3 core pages (about, contact, privacy), 28 location pages, sitemap
+- ✅ Implemented responsive CSS with initial red/orange theme
 - ✅ Added LocalBusiness structured data (JSON-LD) for SEO
 - ✅ Configured proper internal linking silos between location and service pages
 - ✅ Set up workflow to run on port 5000
@@ -34,6 +43,7 @@ This is a complete rebuild of hixaheating.com using the Eleventy (11ty) static s
 - **Structured Data**: LocalBusiness schema with OpenGraph tags on every page
 - **Internal Linking**: Proper SEO silos linking locations to main site and service pages
 - **Responsive Design**: Mobile-first design with brand colors
+- **WCAG AA Compliant**: All text meets accessibility contrast requirements (≥4.5:1 normal, ≥3:1 large)
 
 ## Technology Stack
 - **Eleventy 2.0.1**: Static site generator
@@ -47,9 +57,18 @@ This is a complete rebuild of hixaheating.com using the Eleventy (11ty) static s
 
 ## Contact Information
 - Phone: 01474 554887
+- Email: info@hixaheating.com
 - Service Area: Gravesend, Kent and surrounding areas
 
+## Current Color Palette
+- **Peachy Orange**: #F7955E (primary backgrounds, borders, accents)
+- **Dark Blue**: #2D4E68 (primary text on light backgrounds, structural elements)
+- **Very Dark Blue**: #243E53 (text on colored backgrounds, link hovers, gradients)
+- **Light Peach**: #FFF0E6 (highlight box backgrounds)
+- **Mid Blue**: #365a79 (footer borders)
+- All colors WCAG AA compliant with proper text contrast
+
 ## User Preferences
-- Brand colors: Red/orange (#e74c3c primary, #c0392b darker)
 - Logo: Gravesend.png from original site
 - Focus on local SEO and Gas Safe credentials
+- Modern, professional design with strong accessibility
