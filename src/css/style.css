@@ -588,8 +588,7 @@ footer {
     }
     
     .header-cta {
-        margin-left: 0;
-        align-self: center;
+        display: none;
     }
     
     .main-nav ul {
