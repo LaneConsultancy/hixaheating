@@ -1,127 +1,301 @@
+/* ============================================
+   HIXA HEATING - Worcester Bosch Inspired Design
+   Clean, professional, trustworthy
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
 :root {
-    --primary-color: #F7955E;
-    --primary-hover: #D27F50;
-    --secondary-color: #2D4E68;
-    --secondary-dark: #243E53;
-    --secondary-mid: #365a79;
-    --light-tint: #FFF0E6;
+    /* Primary brand colors */
+    --navy: #1a3a5c;
+    --navy-dark: #0f2439;
+    --navy-light: #2a4a6e;
+
+    /* Accent - Hixa brand orange/copper */
+    --accent: #c45d35;
+    --accent-hover: #b54d28;
+    --accent-light: #d4714a;
+
+    /* Neutrals - Worcester Bosch style */
+    --white: #ffffff;
+    --grey-50: #f8f9fa;
+    --grey-100: #f1f3f5;
+    --grey-200: #e9ecef;
+    --grey-300: #dee2e6;
+    --grey-400: #ced4da;
+    --grey-500: #adb5bd;
+    --grey-600: #868e96;
+    --grey-700: #495057;
+    --grey-800: #343a40;
+    --grey-900: #212529;
+
+    /* Text colors */
+    --text-primary: #212529;
+    --text-secondary: #495057;
+    --text-muted: #868e96;
+
+    /* Typography */
+    --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+    /* Spacing */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+    --space-2xl: 4rem;
+    --space-3xl: 6rem;
+
+    /* Layout */
+    --container-max: 1280px;
+    --header-height: 80px;
+
+    /* Effects */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+    --shadow-lg: 0 8px 30px rgba(0,0,0,0.12);
+
+    --transition: 0.2s ease;
 }
 
-* {
+/* ============================================
+   RESET & BASE
+   ============================================ */
+
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background: #f8f9fa;
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-header {
-    background: #fff;
-    border-bottom: 3px solid #F7955E;
-    padding: 1rem 0;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
-    position: relative;
-    z-index: 1000;
-    transition: box-shadow 0.3s ease;
+body {
+    font-family: var(--font-main);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background: var(--white);
 }
 
 body.menu-open {
     overflow: hidden;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+/* ============================================
+   HEADER - Worcester Bosch Style
+   ============================================ */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: var(--white);
+    border-bottom: 1px solid var(--grey-200);
+    transition: all var(--transition);
+}
+
+/* Brand stripe at top - like Worcester Bosch rainbow */
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg,
+        var(--accent) 0%,
+        var(--accent) 25%,
+        var(--navy) 25%,
+        var(--navy) 50%,
+        var(--accent-light) 50%,
+        var(--accent-light) 75%,
+        var(--navy-light) 75%,
+        var(--navy-light) 100%
+    );
+}
+
+header.scrolled {
+    box-shadow: var(--shadow-md);
+}
+
 .header-container {
-    max-width: 1200px;
+    max-width: var(--container-max);
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 var(--space-lg);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+    height: var(--header-height);
+    padding-top: 4px; /* Account for brand stripe */
+}
+
+/* Logo */
+.logo a {
+    display: flex;
+    align-items: center;
 }
 
 .logo img {
-    height: 90px;
+    height: 50px;
     width: auto;
 }
 
+/* Navigation */
 .main-nav > ul {
     list-style: none;
     display: flex;
-    gap: 2rem;
+    align-items: center;
+    gap: var(--space-xs);
 }
 
-.main-nav a {
-    text-decoration: none;
-    color: #333;
+.main-nav > ul > li > a {
+    display: block;
+    padding: 0.5rem 1rem;
+    font-size: 0.9375rem;
     font-weight: 500;
-    transition: color 0.3s ease;
+    color: var(--text-primary);
+    transition: color var(--transition);
+}
+
+.main-nav > ul > li > a:hover {
+    color: var(--accent);
+}
+
+/* Submenu */
+.has-submenu {
     position: relative;
 }
 
-.main-nav a::after {
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    list-style: none;
+    background: var(--white);
+    border: 1px solid var(--grey-200);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    min-width: 220px;
+    padding: var(--space-xs);
+    padding-top: calc(var(--space-xs) + 8px);
+    margin-top: 0;
+    max-height: 60vh;
+    overflow-y: auto;
+    z-index: 100;
+}
+
+/* Bridge the gap between parent and submenu for hover */
+.has-submenu::after {
     content: '';
     position: absolute;
-    bottom: -5px;
+    top: 100%;
     left: 0;
-    width: 0;
-    height: 2px;
-    background: #F7955E;
-    transition: width 0.3s ease;
+    right: 0;
+    height: 10px;
+    background: transparent;
 }
 
-.main-nav a:hover {
-    color: #2D4E68;
+.has-submenu:hover .submenu,
+.has-submenu.submenu-open .submenu {
+    display: block;
+    animation: fadeIn 0.2s ease;
 }
 
-.main-nav a:hover::after {
-    width: 100%;
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateX(-50%) translateY(-8px); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
 
-.phone-button {
-    background: #F7955E;
-    color: #243E53;
+.submenu li a {
+    display: block;
+    padding: 0.625rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition);
+}
+
+.submenu li a:hover {
+    background: var(--grey-100);
+    color: var(--text-primary);
+}
+
+/* Phone CTA Button - Worcester Bosch style blue button (using our accent) */
+.header-cta .phone-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--accent);
+    color: var(--white);
     padding: 0.75rem 1.5rem;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(247, 149, 94, 0.3);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    transition: all var(--transition);
+    border: none;
 }
 
-.phone-button:hover {
-    background: #F7955E;
-    color: #243E53;
-    box-shadow: 0 4px 16px rgba(247, 149, 94, 0.5);
-    transform: translateY(-2px);
+.header-cta .phone-button:hover {
+    background: var(--accent-hover);
 }
 
+/* Mobile Menu Toggle */
 .mobile-menu-toggle {
     display: none;
     flex-direction: column;
-    gap: 6px;
-    background: none;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    background: transparent;
     border: none;
     cursor: pointer;
-    padding: 12px 8px;
+    padding: 10px;
     z-index: 1001;
 }
 
 .mobile-menu-toggle span {
     display: block;
-    width: 28px;
-    height: 3px;
-    background: #333;
-    transition: all 0.3s ease;
-    border-radius: 2px;
+    width: 24px;
+    height: 2px;
+    background: var(--text-primary);
+    transition: all var(--transition);
 }
 
 .mobile-menu-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translate(8px, 8px);
+    transform: rotate(45deg) translate(5px, 5px);
 }
 
 .mobile-menu-toggle.active span:nth-child(2) {
@@ -129,432 +303,401 @@ body.menu-open {
 }
 
 .mobile-menu-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(8px, -8px);
+    transform: rotate(-45deg) translate(5px, -5px);
 }
 
-.mobile-menu-toggle:focus {
-    outline: 2px solid #F7955E;
-    outline-offset: 4px;
-}
-
-.has-submenu {
-    position: relative;
-}
-
-.submenu {
-    display: none;
-    list-style: none;
-    background: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    min-width: 250px;
-    flex-direction: column;
-}
-
-.has-submenu:hover .submenu,
-.has-submenu.submenu-open .submenu {
-    display: flex;
-}
-
-.submenu li {
-    border-bottom: 1px solid #f0f0f0;
-}
-
-.submenu li:last-child {
-    border-bottom: none;
-}
-
-.submenu a {
-    display: block;
-    padding: 0.75rem 1.5rem;
-    color: #333;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.submenu a:hover {
-    background: #f8f9fa;
-    color: #243E53;
-    padding-left: 2rem;
-}
-
-.submenu a::after {
-    display: none;
-}
-
-.main-nav a:focus {
-    outline: 2px solid #F7955E;
-    outline-offset: 4px;
-}
-
-@media (min-width: 993px) {
-    .submenu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        margin-top: 0.5rem;
-        z-index: 100;
-        max-height: 70vh;
-        overflow-y: auto;
-    }
-    
-    .has-submenu:last-child .submenu {
-        right: 0;
-        left: auto;
-    }
-}
-
-@media (max-width: 992px) {
-    .mobile-menu-toggle {
-        display: flex;
-    }
-    
-    .main-nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background: #fff;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
-        overflow-y: auto;
-        padding-top: 80px;
-        z-index: 999;
-    }
-    
-    .main-nav.active {
-        transform: translateX(0);
-    }
-    
-    .main-nav ul {
-        flex-direction: column;
-        gap: 0;
-        width: 100%;
-    }
-    
-    .main-nav > ul > li {
-        border-bottom: 1px solid #e0e0e0;
-    }
-    
-    .main-nav a {
-        display: block;
-        padding: 1rem 2rem;
-    }
-    
-    .main-nav a::after {
-        display: none;
-    }
-    
-    .submenu {
-        position: static;
-        display: none;
-        background: #f8f9fa;
-        border: none;
-        border-radius: 0;
-        box-shadow: none;
-        margin: 0;
-        padding: 0;
-    }
-    
-    .has-submenu.submenu-open .submenu {
-        display: flex;
-    }
-    
-    .submenu li {
-        border-bottom: 1px solid #e8e8e8;
-    }
-    
-    .submenu a {
-        padding: 0.75rem 2rem 0.75rem 3rem;
-        font-size: 0.95rem;
-    }
-    
-    .submenu a:hover {
-        background: #fff;
-        color: #243E53;
-        padding-left: 3.5rem;
-    }
-    
-    .header-cta {
-        margin-left: auto;
-    }
-}
-
-main {
-    min-height: 60vh;
-}
+/* ============================================
+   HERO SECTION - Worcester Bosch Style
+   ============================================ */
 
 .hero {
     position: relative;
-    background: linear-gradient(135deg, #2D4E68 0%, #243E53 100%);
-    color: #fff;
-    padding: 7rem 2rem;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    padding: calc(var(--header-height) + var(--space-3xl)) var(--space-lg) var(--space-3xl);
+    background: var(--grey-100);
     overflow: hidden;
-    background-size: cover;
-    background-position: center;
-    border-radius: 0 0 24px 24px;
-    animation: fadeIn 0.6s ease-in;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* Background image handling */
+.hero[style*="background-image"] {
+    background-size: cover !important;
+    background-position: center !important;
 }
 
-.hero::before {
+.hero[style*="background-image"]::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(45, 78, 104, 0.92) 0%, rgba(36, 62, 83, 0.88) 100%);
-    z-index: 1;
-    border-radius: 0 0 24px 24px;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.85) 0%, rgba(248,249,250,0.9) 100%);
+    z-index: 0;
 }
 
 .hero > * {
     position: relative;
-    z-index: 2;
+    z-index: 1;
 }
 
 .hero h1 {
-    font-size: 3.2rem;
-    margin-bottom: 2rem;
+    font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 800;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    line-height: 1.2;
-    letter-spacing: -0.5px;
+    color: var(--text-primary);
+    max-width: 800px;
+    margin: 0 auto var(--space-md);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
 }
 
-.hero p {
-    font-size: 1.3rem;
-    margin-bottom: 2.5rem;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+.hero > p {
+    font-size: 1.125rem;
     font-weight: 400;
-    opacity: 0.95;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto var(--space-lg);
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-}
-
-.section {
-    background: #fff;
-    margin: 2rem 0;
-    padding: 3rem 2.5rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.07);
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.section:hover {
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-    transform: translateY(-2px);
-}
-
-.section h2 {
-    color: #2D4E68;
-    margin-bottom: 1.5rem;
-    font-size: 2.2rem;
-    font-weight: 700;
-    line-height: 1.3;
-    border-bottom: 3px solid #f8f9fa;
-    padding-bottom: 0.75rem;
-}
-
-.section h3 {
-    color: #2D4E68;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    font-size: 1.6rem;
+/* Hero CTA - Worcester Bosch blue button style */
+.hero .cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: var(--accent);
+    color: var(--white);
+    padding: 1rem 2rem;
+    font-size: 1rem;
     font-weight: 600;
-}
-
-.section ul {
-    margin: 1.5rem 0 1.5rem 2rem;
-    line-height: 1.9;
-}
-
-.section li {
-    margin-bottom: 0.75rem;
-    position: relative;
-}
-
-.section li::marker {
-    color: #F7955E;
-}
-
-.section p {
-    margin-bottom: 1.25rem;
-    line-height: 1.9;
-    color: #444;
-}
-
-.section a:not(.cta-button) {
-    color: #2D4E68;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
-    border-bottom: 1px solid transparent;
-}
-
-.section a:hover {
-    color: #243E53;
-    border-bottom-color: #243E53;
-}
-
-.section img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 12px;
-    margin: 1.5rem 0;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.cta-button {
-    display: inline-block;
-    background: #F7955E;
-    color: #243E53;
-    padding: 1.3rem 3rem;
-    text-decoration: none;
-    border-radius: 12px;
-    font-weight: bold;
-    font-size: 1.15rem;
-    margin: 1.5rem 0;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 16px rgba(247, 149, 94, 0.35);
+    border-radius: var(--radius-sm);
     border: none;
     cursor: pointer;
-    min-width: 280px;
-}
-
-.cta-button:hover {
-    background: #F7955E;
-    color: #243E53;
-    box-shadow: 0 8px 28px rgba(247, 149, 94, 0.6);
-    transform: translateY(-3px) scale(1.02);
-}
-
-.hero .cta-button {
-    background: #F7955E;
-    color: #243E53;
-    border: 2px solid #F7955E;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all var(--transition);
 }
 
 .hero .cta-button:hover {
-    background: #f8f9fa;
-    color: #243E53;
-    border-color: #F7955E;
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
-    transform: translateY(-3px);
+    background: var(--accent-hover);
 }
+
+/* Trust badges - Worcester Bosch horizontal style */
+.hero > div[style*="margin-top"] {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-lg);
+    margin-top: var(--space-xl) !important;
+    padding-top: var(--space-lg);
+    max-width: 900px;
+}
+
+.hero > div[style*="margin-top"] p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* ============================================
+   MAIN CONTENT AREA
+   ============================================ */
+
+main {
+    min-height: 50vh;
+}
+
+.container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: var(--space-2xl) var(--space-lg);
+}
+
+/* ============================================
+   SECTIONS - Clean Worcester Bosch Style
+   ============================================ */
+
+.section {
+    background: var(--white);
+    padding: var(--space-2xl) var(--space-xl);
+    margin-bottom: 2px;
+}
+
+/* Alternating grey backgrounds like Worcester Bosch */
+.section:nth-child(even) {
+    background: var(--grey-50);
+}
+
+.section h2 {
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--space-md);
+    line-height: 1.2;
+}
+
+.section h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-sm);
+}
+
+.section p {
+    color: var(--text-secondary);
+    margin-bottom: var(--space-sm);
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 800px;
+}
+
+.section ul {
+    margin: var(--space-md) 0;
+    padding-left: var(--space-md);
+}
+
+.section li {
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.section a:not(.cta-button) {
+    color: var(--accent);
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.section a:not(.cta-button):hover {
+    color: var(--accent-hover);
+}
+
+/* ============================================
+   CTA BUTTON (General)
+   ============================================ */
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent);
+    color: var(--white);
+    padding: 0.875rem 1.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition);
+    margin: var(--space-sm) 0;
+}
+
+.cta-button:hover {
+    background: var(--accent-hover);
+}
+
+/* ============================================
+   CARD GRID - Worcester Bosch 3-column style
+   ============================================ */
 
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin: 2rem 0;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+    margin: var(--space-xl) 0;
 }
 
 .card {
-    background: #fff;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.07);
-    transition: all 0.3s ease;
-    border-top: 4px solid #F7955E;
+    background: var(--white);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition);
+    border: 1px solid var(--grey-200);
 }
 
 .card:hover {
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
 }
 
 .card h3 {
-    color: #2D4E68;
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: var(--space-md) var(--space-md) var(--space-sm);
 }
 
 .card p {
-    color: #555;
-    line-height: 1.8;
+    color: var(--text-secondary);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    margin: 0 var(--space-md) var(--space-md);
 }
+
+.card ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.card li {
+    padding: 0.75rem var(--space-md);
+    border-top: 1px solid var(--grey-100);
+}
+
+.card li:first-child {
+    border-top: none;
+}
+
+.card a {
+    color: var(--accent);
+    font-weight: 500;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+/* ============================================
+   CTA BOX - Contact/Call to Action Box
+   ============================================ */
+
+.cta-box {
+    background: linear-gradient(135deg, var(--grey-50) 0%, var(--white) 100%);
+    border: 2px solid var(--accent);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    margin: var(--space-lg) 0;
+    text-align: center;
+}
+
+.cta-box h3 {
+    color: var(--accent);
+    font-size: 1.5rem;
+    margin-bottom: var(--space-md);
+}
+
+.cta-box .phone-number {
+    margin-bottom: var(--space-sm);
+}
+
+.cta-box .phone-number a {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.cta-box .phone-number a:hover {
+    text-decoration: underline;
+}
+
+.cta-box .email a {
+    font-size: 1.125rem;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.cta-box .email a:hover {
+    text-decoration: underline;
+}
+
+.cta-box p {
+    margin: var(--space-sm) 0;
+    color: var(--text-secondary);
+}
+
+.cta-box p:last-child {
+    margin-bottom: 0;
+}
+
+/* ============================================
+   FEATURES GRID - Worcester Bosch Trust Badges Style
+   ============================================ */
 
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin: 2rem 0;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+    margin: var(--space-xl) 0;
+    text-align: center;
 }
 
 .feature-item {
-    padding: 1.5rem;
-    background: #f8f9fa;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    border-left: 4px solid #F7955E;
+    padding: var(--space-lg);
 }
 
-.feature-item:hover {
-    background: #fff;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    transform: translateX(5px);
-}
-
+.feature-item h3,
 .feature-item strong {
-    color: #2D4E68;
-    font-size: 1.1rem;
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--space-sm);
 }
+
+.feature-item p {
+    color: var(--text-secondary);
+    font-size: 0.9375rem;
+    margin: 0 auto;
+    max-width: 280px;
+}
+
+/* ============================================
+   HIGHLIGHT BOX
+   ============================================ */
 
 .highlight-box {
-    background: #FFF0E6;
-    border-left: 5px solid #F7955E;
-    padding: 2rem;
-    margin: 2rem 0;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    background: var(--grey-50);
+    border-left: 4px solid var(--accent);
+    padding: var(--space-lg) var(--space-xl);
+    margin: var(--space-lg) 0;
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
 }
 
 .highlight-box h3 {
-    color: #243E53;
+    color: var(--text-primary);
+    margin-top: 0;
+    font-size: 1.25rem;
+}
+
+/* ============================================
+   FOOTER - Clean Worcester Bosch Style
+   ============================================ */
+
+footer {
+    background: var(--grey-900);
+    color: var(--white);
+    padding: var(--space-3xl) var(--space-lg) var(--space-lg);
     margin-top: 0;
 }
 
-footer {
-    background: linear-gradient(135deg, #2D4E68 0%, #243E53 100%);
-    color: #fff;
-    padding: 4rem 2rem 1.5rem;
-    margin-top: 4rem;
-    box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
-}
-
 .footer-container {
-    max-width: 1200px;
+    max-width: var(--container-max);
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-xl);
 }
 
 .footer-section h3 {
-    color: #fff;
-    margin-bottom: 1.5rem;
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-weight: 600;
+    color: var(--white);
+    margin-bottom: var(--space-md);
+}
+
+.footer-section p {
+    color: var(--grey-400);
+    font-size: 0.875rem;
+    margin-bottom: 0.25rem;
+    line-height: 1.5;
 }
 
 .footer-section ul {
@@ -562,192 +705,73 @@ footer {
 }
 
 .footer-section li {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.375rem;
 }
 
 .footer-section a {
-    color: #ecf0f1;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    display: inline-block;
+    color: var(--grey-400);
+    font-size: 0.875rem;
+    transition: color var(--transition);
 }
 
 .footer-section a:hover {
-    color: #ecf0f1;
-    transform: translateX(5px);
+    color: var(--white);
 }
 
 .footer-bottom {
+    max-width: var(--container-max);
+    margin: var(--space-xl) auto 0;
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--grey-700);
     text-align: center;
-    margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 1px solid #365a79;
-    color: #bdc3c7;
 }
 
-@media (max-width: 968px) {
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-    
-    .card-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
+.footer-bottom p {
+    color: var(--grey-500);
+    font-size: 0.8125rem;
 }
 
-@media (max-width: 768px) {
-    .header-container {
-        flex-direction: row;
-        gap: 0;
-        padding: 0 1.5rem;
-    }
-    
-    .logo {
-        flex: 1;
-    }
-    
-    .logo img {
-        height: 70px;
-    }
-    
-    .mobile-menu-toggle {
-        margin-left: auto;
-    }
-    
-    .header-cta {
-        display: none;
-    }
-    
-    .main-nav ul {
-        flex-direction: column;
-        gap: 0.5rem;
-        text-align: center;
-    }
-    
-    .hero {
-        padding: 5rem 1.5rem;
-        border-radius: 0 0 20px 20px;
-    }
-    
-    .hero::before {
-        border-radius: 0 0 20px 20px;
-    }
-    
-    .hero h1 {
-        font-size: 2.2rem;
-        margin-bottom: 1.5rem;
-    }
-    
-    .hero p {
-        font-size: 1.15rem;
-        margin-bottom: 2rem;
-    }
-    
-    .hero .cta-button {
-        width: 100%;
-        max-width: 100%;
-        min-width: auto;
-        padding: 1.4rem 2rem;
-        font-size: 1.1rem;
-    }
-    
-    .section {
-        padding: 2rem 1.5rem;
-    }
-    
-    .section h2 {
-        font-size: 1.8rem;
-    }
-    
-    .section h3 {
-        font-size: 1.4rem;
-    }
-    
-    .card-grid,
-    .features-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .container {
-        padding: 1rem;
-    }
-}
+/* ============================================
+   COOKIE BANNER - Clean style
+   ============================================ */
 
-@media (max-width: 480px) {
-    .logo img {
-        height: 60px;
-    }
-    
-    .hero {
-        padding: 4rem 1.25rem;
-    }
-    
-    .hero h1 {
-        font-size: 1.8rem;
-        margin-bottom: 1.25rem;
-    }
-    
-    .hero p {
-        font-size: 1.05rem;
-    }
-    
-    .cta-button {
-        padding: 1.2rem 1.5rem;
-        font-size: 1.05rem;
-    }
-}
-
-/* Cookie Consent Banner */
 .cookie-banner {
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(45, 78, 104, 0.98);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+    background: var(--white);
+    border-top: 1px solid var(--grey-200);
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
     z-index: 10000;
-    animation: slideUp 0.4s ease-out;
+    animation: slideUp 0.3s ease;
 }
 
 @keyframes slideUp {
-    from {
-        transform: translateY(100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
 }
 
 .cookie-banner-content {
-    max-width: 1200px;
+    max-width: var(--container-max);
     margin: 0 auto;
-    padding: 1.25rem 2rem;
+    padding: var(--space-md) var(--space-lg);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 2rem;
+    gap: var(--space-lg);
 }
 
 .cookie-banner-text {
-    color: #fff;
-    font-size: 0.95rem;
-    line-height: 1.6;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    line-height: 1.5;
     margin: 0;
-    flex: 1;
 }
 
 .cookie-banner-link {
-    color: #F7955E;
-    text-decoration: underline;
-    font-weight: 600;
-    transition: color 0.3s ease;
-}
-
-.cookie-banner-link:hover {
-    color: #fff;
+    color: var(--accent);
+    font-weight: 500;
 }
 
 .cookie-banner-buttons {
@@ -757,77 +781,252 @@ footer {
 }
 
 .cookie-btn {
-    padding: 0.75rem 1.75rem;
+    padding: 0.625rem 1.25rem;
     border: none;
-    border-radius: 8px;
+    border-radius: var(--radius-sm);
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.875rem;
     cursor: pointer;
-    transition: all 0.3s ease;
-    min-width: 100px;
+    transition: all var(--transition);
 }
 
 .cookie-btn-accept {
-    background: #F7955E;
-    color: #243E53;
-    box-shadow: 0 2px 8px rgba(247, 149, 94, 0.3);
+    background: var(--accent);
+    color: var(--white);
 }
 
 .cookie-btn-accept:hover {
-    background: #fff;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(247, 149, 94, 0.4);
+    background: var(--accent-hover);
 }
 
 .cookie-btn-decline {
-    background: transparent;
-    color: #fff;
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: var(--white);
+    color: var(--text-secondary);
+    border: 1px solid var(--grey-300);
 }
 
 .cookie-btn-decline:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.5);
+    border-color: var(--grey-400);
+    background: var(--grey-50);
 }
 
-/* Mobile responsive */
+/* ============================================
+   RESPONSIVE - TABLET
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .header-container {
+        height: 70px;
+    }
+
+    .main-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: var(--white);
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        overflow-y: auto;
+        padding: 90px var(--space-md) var(--space-lg);
+        z-index: 999;
+    }
+
+    .main-nav.active {
+        transform: translateX(0);
+    }
+
+    .main-nav > ul {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .main-nav > ul > li {
+        border-bottom: 1px solid var(--grey-200);
+        width: 100%;
+    }
+
+    .main-nav > ul > li > a {
+        padding: var(--space-sm) 0;
+        font-size: 1.0625rem;
+    }
+
+    .submenu {
+        position: static;
+        display: none;
+        transform: none;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        background: var(--grey-50);
+        margin: 0;
+        padding: var(--space-xs) 0;
+    }
+
+    .has-submenu.submenu-open .submenu {
+        display: block;
+        animation: none;
+    }
+
+    .submenu li a {
+        padding: 0.75rem var(--space-md);
+    }
+
+    .header-cta {
+        display: none;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: calc(70px + var(--space-xl)) var(--space-md) var(--space-xl);
+    }
+}
+
+/* ============================================
+   RESPONSIVE - MOBILE
+   ============================================ */
+
 @media (max-width: 768px) {
+    .header-container {
+        padding: 0 var(--space-md);
+    }
+
+    .logo img {
+        height: 42px;
+    }
+
+    .hero h1 {
+        font-size: 1.75rem;
+    }
+
+    .hero > p {
+        font-size: 1rem;
+    }
+
+    .hero > div[style*="margin-top"] {
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+
+    .section {
+        padding: var(--space-xl) var(--space-md);
+    }
+
+    .section h2 {
+        font-size: 1.5rem;
+    }
+
+    .card-grid,
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+
+    .feature-item {
+        text-align: left;
+        padding: var(--space-md);
+        background: var(--grey-50);
+        border-radius: var(--radius-md);
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+
     .cookie-banner-content {
         flex-direction: column;
-        padding: 1.25rem 1.5rem;
-        gap: 1.25rem;
-        align-items: stretch;
-    }
-    
-    .cookie-banner-text {
-        font-size: 0.9rem;
+        padding: var(--space-md);
+        gap: var(--space-sm);
         text-align: center;
     }
-    
+
     .cookie-banner-buttons {
         width: 100%;
-        justify-content: center;
     }
-    
+
     .cookie-btn {
         flex: 1;
-        min-width: auto;
     }
 }
 
+/* ============================================
+   RESPONSIVE - SMALL MOBILE
+   ============================================ */
+
 @media (max-width: 480px) {
-    .cookie-banner-content {
-        padding: 1rem 1.25rem;
-        gap: 1rem;
+    .hero h1 {
+        font-size: 1.5rem;
     }
-    
-    .cookie-banner-text {
-        font-size: 0.85rem;
-        line-height: 1.5;
+
+    .section {
+        padding: var(--space-lg) var(--space-sm);
     }
-    
-    .cookie-btn {
-        padding: 0.7rem 1.25rem;
-        font-size: 0.9rem;
+
+    .cta-button {
+        width: 100%;
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY & UTILITY
+   ============================================ */
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+::selection {
+    background: var(--accent);
+    color: var(--white);
+}
+
+/* Print styles */
+@media print {
+    header, footer, .cookie-banner {
+        display: none;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: var(--space-lg);
+        background: var(--white) !important;
+    }
+
+    .section {
+        break-inside: avoid;
     }
 }

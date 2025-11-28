@@ -1,7 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const header = document.querySelector('header');
     const menuToggle = document.querySelector('.mobile-menu-toggle');
     const mainNav = document.querySelector('.main-nav');
     const body = document.body;
+
+    // Header scroll effect
+    if (header) {
+        let lastScroll = 0;
+        window.addEventListener('scroll', function() {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            lastScroll = currentScroll;
+        }, { passive: true });
+    }
     
     if (!menuToggle || !mainNav) {
         console.warn('Menu toggle or navigation not found');
